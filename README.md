@@ -11,6 +11,9 @@ This project was bootstrapped with the latest version of [Create React App](http
 
 ## Available Scripts
 
+### `npm install`
+To install all the node_modules dependencies
+
 ### `npm start`
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
