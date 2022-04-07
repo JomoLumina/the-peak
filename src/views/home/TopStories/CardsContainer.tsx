@@ -68,7 +68,6 @@ export const CardsContainer: FC<CardsContainerProps> = ({orderBy})  => {
   const fetchArticles = useCallback((): void => {
     const params = {
         type: "article",
-        section: "news",
         "show-elements": "all",
         "show-fields": 'bodyText,thumbnail',
         "page-size":8,

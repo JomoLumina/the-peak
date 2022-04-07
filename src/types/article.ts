@@ -1,5 +1,7 @@
 export interface Article{
   id: string,
+  sectionId: string,
+  pillarName: string,
   hasImage?: boolean,
   hasBody?: boolean,
   webTitle?: string,

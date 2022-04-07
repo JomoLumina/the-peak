@@ -50,6 +50,8 @@ const LoadArticles: FC<LoadArticlesProps> = (props) => {
         <Box className={className} key={index} mb={4}>
           <NewsCard 
             id={article.id}
+            sectionId={article.sectionId}
+            pillarName={article.pillarName}
             hasBody={hasBody} 
             hasImage={hasImage} 
             body={{

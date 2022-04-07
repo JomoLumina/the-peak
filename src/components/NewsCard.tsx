@@ -5,6 +5,8 @@ import { makeStyles } from 'tss-react/mui';
 import { PlaceHolderImg } from '../assets';
 import { Link } from 'react-router-dom';
 import type { Article as NewsCardProps } from '../types/article';
+import { SECTIONS } from '../constants';
+
 const useStyles = makeStyles()((theme: Theme) => {
   return {
     root: {
@@ -30,6 +32,7 @@ const useStyles = makeStyles()((theme: Theme) => {
       padding: 0,
       backgroundColor: "#0D47A1",
       border: `1px solid ${theme.palette.common.black}`,
+      borderBottom: '4px solid',
       minWidth: '100%',
       '&:last-child': {
         padding: 0
@@ -75,11 +78,16 @@ const NewsCard: FC<NewsCardProps> = (cardDetails:NewsCardProps) => {
   const backgroundImage = cardDetails.body?.image ? cardDetails.body.image : PlaceHolderImg;
   const maxWidth = cardDetails.style?.maxWidth || 350;
   const height = cardDetails.style?.height || 347;
-  const articleId = encodeURIComponent(cardDetails.id); 
+  const articleId = encodeURIComponent(cardDetails.id);
+  const sections = SECTIONS.filter(s => s.name === cardDetails.sectionId);
+  const section = sections.length > 0 ? sections[0] : null;
+  const borderBottomColor = section ? section.color : '#388E3C'; 
   return (
     <Link to={`/article/${articleId}`} className={classes.link}>
       <Card sx={{ maxWidth: maxWidth, height: height }} className={classes.root}>
-        <CardContent className={classes.cardContent} style={{backgroundImage: hasImage ? `url("${backgroundImage}")` : ""}}>
+        <CardContent className={classes.cardContent} 
+          style={{backgroundImage: hasImage ? `url("${backgroundImage}")` : "", 
+                  borderBottomColor: borderBottomColor}}>
           <Box className={classes.cardDetails}>
             <Typography gutterBottom variant="h1" component="div" className={classes.title}>
               {cardDetails.body?.title}

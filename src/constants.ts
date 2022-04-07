@@ -3,17 +3,20 @@ import { SortOrder } from "./types/sortOrder";
 export const SECTIONS = [{
   id: 1,
   name: 'sport',
-  heading: 'Sports'
+  heading: 'Sports',
+  color: '#F50057'
 },
 {
   id: 2,
   name: 'lifeandstyle',
-  heading: 'Lifestyle'
+  heading: 'Lifestyle',
+  color: '#2196F3'
 },
 {
   id: 3,
   name: 'culture',
-  heading: 'Culture'
+  heading: 'Culture',
+  color: '#FFCA28'
 }]
 
 export const oldest: SortOrder = {
