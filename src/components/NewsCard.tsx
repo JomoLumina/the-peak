@@ -42,7 +42,7 @@ const useStyles = makeStyles()((theme: Theme) => {
       flexDirection: 'column',
       display: 'flex',
       height: 120,
-      padding: 10,
+      padding: '10px 10px 0',
       width: '100%',
       justifyContent: 'flex-start',
       background: "#09357BE5"
@@ -58,6 +58,7 @@ const useStyles = makeStyles()((theme: Theme) => {
       overflow: 'hidden',
       flex: '1 1 auto',
       marginRight: theme.spacing(4),
+      marginBottom: 0,
       alignItems: 'flex-start'
     },
     body: {
